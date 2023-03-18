@@ -35,11 +35,17 @@ fun List(
                 checked = item.checked,
                 onCheckedChange = { checked -> onCheckedItem(item, checked) },
                 onClose = { onCloseItem(item) },
-                modifier = Modifier.animateItemPlacement(), // Este modifier debe ser nuevo para no arrastrar paddingValues
-                // Alejandro no pasa modifier porque no hace animación.
+                modifier = Modifier.animateItemPlacement(), // #1
             )
         }
-        item { Spacer(modifier = Modifier.padding(25.dp)) }
+        item { Spacer(modifier = Modifier.padding(30.dp)) }
     }
 }
+
+/**
+ * #1
+ * Con animateItemPlacement() se logra que al añadir/eliminar elementos, se realice una animación.
+ * El modifier DEBE ser nuevo para esto o arrastraría las modificaciones previas.
+ * Fuente: https://fvilarino.medium.com/exploring-jetpack-compose-lazylist-animations-a3f97c91c2dd
+ */
 
