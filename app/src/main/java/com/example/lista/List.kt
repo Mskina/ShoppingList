@@ -38,7 +38,7 @@ fun List(
                 modifier = Modifier.animateItemPlacement(), // #1
             )
         }
-        item { Spacer(modifier = Modifier.padding(30.dp)) }
+        item { Spacer(modifier = Modifier.padding(30.dp)) } // #2
     }
 }
 
@@ -47,5 +47,9 @@ fun List(
  * Con animateItemPlacement() se logra que al añadir/eliminar elementos, se realice una animación.
  * El modifier DEBE ser nuevo para esto o arrastraría las modificaciones previas.
  * Fuente: https://fvilarino.medium.com/exploring-jetpack-compose-lazylist-animations-a3f97c91c2dd
+ *
+ * #2
+ * Con este espacio me aseguro que quede un hueco bajo la última tarjeta, de forma
+ * que el FAB no tape la X de eliminar.
  */
 
